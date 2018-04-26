@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Etch-a-sketch</title>
+</head>
+<body>
+
+<button id="clear">Clear</button>
+<div id="container">
+ 
+</div>
+ 
+
+<script>
+ 
+var grid = document.querySelector("#container");  
+var btnClear = document.querySelector("#clear");
+
+btnClear.addEventListener("click", clearGrid);
+  
+  
+function createGrid(){
+    for(var i = 1; i <= 16; i++){
+        var div = document.createElement("div");
+        div.classList.add("item");
+        div.textContent = i;
+        div.addEventListener("mouseover", enterOrLeaveItem);
+        grid.appendChild(div); 
+    }
+}  
+
+function setGrid(){ 
+  
+grid.style.gridTemplateColumns = "repeat(4, 1fr)";
+grid.style.gridTemplateRows = "repeat(4, 1fr)";  
+}
+
+function enterOrLeaveItem(){
+    
+this.classList.toggle("colored");    
+    
+}    
+    
+function deleteAllItems(){
+    
+    var allItems = document.querySelectorAll(".item");
+    allItems.forEach(e => e.parentNode.removeChild(e));
+}
+
+function clearGrid(){
+    var gridDimension = prompt("Please type the size of the grid");
+    deleteAllItems();
+    
+    
+    
+    
+}
+
+//clearGrid();
+createGrid();    
+setGrid();
+  
+    
+
+  
+</script>
+  
+</body>
+</html>
