@@ -1,0 +1,20 @@
+#container {
+  
+display:grid;
+border-style: solid;
+
+}
+
+
+  
+.colored {
+    
+background: red;
+    
+}
+  
+
+.item {
+      
+
+}
